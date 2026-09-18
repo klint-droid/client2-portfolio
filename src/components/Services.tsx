@@ -114,7 +114,7 @@ export const Services: React.FC = () => {
                           color: 'var(--text-subtle)',
                         }}
                       >
-                        Practice Area
+                        Expertise
                       </span>
                     </div>
 
