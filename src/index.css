@@ -1,0 +1,297 @@
+:root {
+  /* Warm Editorial & Resume Color Scheme */
+  --bg-primary: #FAF7F2;       /* Warm Alabaster Linen Canvas */
+  --bg-secondary: #F3ECE0;     /* Warm Oat Sand */
+  --bg-card: #FFFFFF;          /* Pure Crisp Surface */
+  --bg-subtle: #F8F4EC;        /* Soft Tinted Surface */
+  --bg-dossier: #F4EFEB;       /* Muted Parchment */
+
+  /* Hairline Borders & Dividers */
+  --border-hairline: #E7DECE;  /* Whisper Thin Border */
+  --border-strong: #D6C7B2;    /* Defined Architectural Line */
+  --border-focus: #A47D48;     /* Accent Line */
+
+  /* High-Contrast Typography */
+  --text-main: #191614;        /* Deep Warm Espresso Charcoal */
+  --text-muted: #5C544C;       /* Slate Warm Taupe */
+  --text-subtle: #8C8276;      /* Pebble Grey */
+  --text-inverse: #FAF7F2;     /* Inverted Off-White */
+
+  /* Curated Warm Accents */
+  --accent: #A47D48;           /* Burnished Camel */
+  --accent-hover: #8C6534;     /* Deep Warm Gold */
+  --accent-gold: #C6A673;      /* Champagne Gold Accent */
+  --accent-soft: rgba(164, 125, 72, 0.10); /* Soft Camel Wash */
+
+  /* Deep Luxe Elements */
+  --dark-bg: #141210;          /* Deep Noir Espresso */
+  --dark-card: #1D1916;        /* Elevated Dark Slate */
+  --dark-border: #2D2722;      /* Hairline Dark Border */
+
+  /* Typography Scale */
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Elevation */
+  --shadow-subtle: 0 1px 3px rgba(25, 22, 20, 0.04), 0 4px 12px rgba(25, 22, 20, 0.03);
+  --shadow-elevated: 0 12px 30px -4px rgba(25, 22, 20, 0.08), 0 4px 12px -2px rgba(25, 22, 20, 0.03);
+  --shadow-drawer: -10px 0 40px rgba(25, 22, 20, 0.18);
+
+  /* Geometry */
+  --container-width: 1260px;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 9999px;
+  --transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset & Global Canvas */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Editorial Typography */
+h1, h2, h3, h4, .serif {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--text-main);
+}
+
+p {
+  color: var(--text-muted);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+button {
+  font-family: var(--font-sans);
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: var(--radius-pill);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Grid & Layout System */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 18px;
+  }
+}
+
+.section {
+  padding: 110px 0;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 70px 0;
+  }
+}
+
+/* Section Header (Architectural Editorial Style) */
+.editorial-header {
+  margin-bottom: 60px;
+}
+
+.editorial-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.editorial-tag::before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 1px;
+  background-color: var(--accent);
+}
+
+.editorial-title {
+  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+  line-height: 1.15;
+  color: var(--text-main);
+  max-width: 840px;
+  margin-bottom: 14px;
+}
+
+.editorial-desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 680px;
+}
+
+/* Buttons */
+.btn-solid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 26px;
+  border-radius: var(--radius-pill);
+  background-color: var(--text-main);
+  color: #FFFFFF;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(25, 22, 20, 0.15);
+}
+
+.btn-solid:hover {
+  background-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(164, 125, 72, 0.3);
+  color: #FFFFFF;
+}
+
+.btn-camel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 26px;
+  border-radius: var(--radius-pill);
+  background-color: var(--accent);
+  color: #FFFFFF;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: var(--transition);
+  box-shadow: 0 4px 14px rgba(164, 125, 72, 0.25);
+}
+
+.btn-camel:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(164, 125, 72, 0.38);
+}
+
+.btn-border {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  background-color: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-strong);
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-border:hover {
+  border-color: var(--text-main);
+  background-color: rgba(25, 22, 20, 0.04);
+  transform: translateY(-2px);
+}
+
+/* Dossier Card Framework */
+.dossier-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  box-shadow: var(--shadow-subtle);
+  transition: var(--transition);
+}
+
+.dossier-card:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-elevated);
+}
+
+/* Toast Component */
+.toast-container {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  background: var(--dark-bg);
+  color: #FFFFFF;
+  padding: 13px 20px;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.88rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  animation: toastSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes toastSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
