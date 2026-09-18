@@ -39,7 +39,7 @@ export const Contact: React.FC<ContactProps> = ({ onOpenResume, onNotify }) => {
       <div className="container">
         {/* Editorial Header */}
         <div className="editorial-header">
-          <div className="editorial-tag">06 / Inquiry Desk</div>
+          <div className="editorial-tag">Executive Inquiry Desk</div>
           <h2 className="editorial-title">
             Initiate a Direct Inquiry or Request Retainer Availability.
           </h2>

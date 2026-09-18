@@ -61,7 +61,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume, onNotify }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [navItems]);
 
-  const handleLinkClick = (id: string, label: string) => {
+  const handleLinkClick = (id: string) => {
     setClickedItem(id);
     setActiveSection(id);
     setTimeout(() => setClickedItem(null), 300);
@@ -147,17 +147,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume, onNotify }) => {
           </span>
         </a>
 
-        {/* Center Animated Navigation Links (Numbers Removed) */}
+        {/* Center Navigation Links (Plain Bar with Hover Effects) */}
         <nav
           style={{
             display: 'none',
             alignItems: 'center',
-            gap: '6px',
-            backgroundColor: 'rgba(255, 255, 255, 0.55)',
-            padding: '4px 8px',
-            borderRadius: 'var(--radius-pill)',
-            border: '1px solid var(--border-hairline)',
-            boxShadow: '0 2px 8px rgba(25, 22, 20, 0.02)',
+            gap: '28px',
           }}
           className="desktop-menu"
         >
@@ -169,7 +164,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume, onNotify }) => {
               <a
                 key={item.label}
                 href={item.href}
-                onClick={() => handleLinkClick(item.id, item.label)}
+                onClick={() => handleLinkClick(item.id)}
                 className={`nav-anim-link ${isActive ? 'active' : ''} ${isJustClicked ? 'clicked' : ''}`}
               >
                 <span>{item.label}</span>
@@ -298,61 +293,39 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume, onNotify }) => {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          padding: 8px 16px;
-          border-radius: var(--radius-pill);
-          font-size: 0.84rem;
+          padding: 8px 4px;
+          font-size: 0.88rem;
           font-weight: 600;
           letter-spacing: 0.01em;
           color: var(--text-muted);
           text-decoration: none;
-          transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-          overflow: hidden;
+          transition: color 0.2s ease, transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
           cursor: pointer;
         }
 
-        /* Hover Pill Animation */
-        .nav-anim-link::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background-color: var(--accent-soft);
-          border-radius: var(--radius-pill);
-          opacity: 0;
-          transform: scale(0.85);
-          transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-          z-index: 0;
-        }
-
-        /* Hover Indicator Line */
+        /* Animated Underline Indicator */
         .nav-anim-link::after {
           content: '';
           position: absolute;
-          bottom: 4px;
+          bottom: -2px;
           left: 50%;
-          width: 14px;
+          width: 22px;
           height: 2px;
           background-color: var(--accent);
           border-radius: 2px;
           transform: translateX(-50%) scaleX(0);
           transform-origin: center;
-          transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-          z-index: 1;
+          transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
         }
 
         .nav-anim-link span {
           position: relative;
-          z-index: 1;
-          transition: transform 0.15s ease, color 0.15s ease;
+          transition: color 0.18s ease;
         }
 
         .nav-anim-link:hover {
           color: var(--text-main);
           transform: translateY(-1px);
-        }
-
-        .nav-anim-link:hover::before {
-          opacity: 1;
-          transform: scale(1);
         }
 
         .nav-anim-link:hover::after {
@@ -362,14 +335,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume, onNotify }) => {
         /* Click Press Feedback */
         .nav-anim-link:active,
         .nav-anim-link.clicked {
-          transform: scale(0.92);
+          transform: scale(0.93);
           transition: transform 0.08s ease;
         }
 
         /* Active Selected State */
         .nav-anim-link.active {
           color: var(--text-main);
-          background-color: rgba(164, 125, 72, 0.12);
           font-weight: 700;
         }
 

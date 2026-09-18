@@ -8,7 +8,7 @@ export const Process: React.FC = () => {
       <div className="container">
         {/* Editorial Header */}
         <div className="editorial-header">
-          <div className="editorial-tag">05 / Collaboration Blueprint</div>
+          <div className="editorial-tag">Collaboration Blueprint</div>
           <h2 className="editorial-title">
             How an Executive Engagement Unfolds.
           </h2>
@@ -50,11 +50,11 @@ export const Process: React.FC = () => {
                     paddingBottom: '12px',
                   }}
                 >
-                  <span className="serif" style={{ fontSize: '2.4rem', fontWeight: 700, color: 'var(--accent)', lineHeight: 1 }}>
-                    {step.step}
+                  <span className="serif" style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--accent)', letterSpacing: '0.04em' }}>
+                    Stage
                   </span>
                   <span style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-subtle)', fontWeight: 600 }}>
-                    Phase 0{idx + 1}
+                    Step In Sequence
                   </span>
                 </div>
 

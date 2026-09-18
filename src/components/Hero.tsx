@@ -40,24 +40,24 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume, onNotify }) => {
               marginBottom: '16px',
             }}
           >
-            <span>Executive Dossier & Portfolio</span>
+            <span>Jeanette G. Gepiga</span>
             <span style={{ color: 'var(--border-strong)' }}>/</span>
-            <span>8+ Years Verified Experience</span>
+            <span>8+ Years Combined Experience</span>
           </div>
 
           <h1
             className="serif"
             style={{
-              fontSize: 'clamp(2.8rem, 5.8vw, 4.8rem)',
-              lineHeight: 1.05,
+              fontSize: 'clamp(2.5rem, 4.8vw, 4rem)',
+              lineHeight: 1.15,
               fontWeight: 600,
               color: 'var(--text-main)',
               maxWidth: '960px',
-              letterSpacing: '-0.025em',
+              letterSpacing: '-0.02em',
             }}
           >
-            Methodical. Discreet. <br />
-            <span style={{ fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Indispensable</span> Executive Support.
+            General Virtual Assistant & <br />
+            <span style={{ fontStyle: 'italic', fontWeight: 400, color: 'var(--accent)' }}>Administrative & Business Support</span> Professional.
           </h1>
         </div>
 
